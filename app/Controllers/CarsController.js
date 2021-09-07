@@ -60,4 +60,12 @@ export class CarsController {
     document.getElementById('car-form').classList.toggle('visually-hidden')
   }
 
+  async deleteCar(carId){
+    try{
+      await carsService.deleteCar(carId)
+    }catch (error){
+      alert(error.message)
+    }
+  }
 }
+

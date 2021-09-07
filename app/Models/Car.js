@@ -22,6 +22,7 @@ export class Car {
             <span>$ ${this.price}</span>
           </h5>
           <p>${this.description}</p>
+          <button class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
         </div>
       </div>
     </div>

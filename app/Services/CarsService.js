@@ -5,6 +5,12 @@ const api = axios.create({
   baseURL: "https://bcw-sandbox.herokuapp.com/api/cars"
 })
 class CarsService {
+  
+  async deleteCar(carId) {
+    await api.delete(carId)
+    ProxyState.cars = ProxyState.cars.filter(c => c.id !== carId)
+  }
+
   async addCar(carData) {
     let res = await api.post('', carData)
     console.log("addCar", carData)
