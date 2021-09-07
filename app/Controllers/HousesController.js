@@ -7,7 +7,6 @@ function _drawHouses() {
   let template = ''
   ProxyState.houses.forEach(house => template += house.CardTemplate)
   document.getElementById('listings').innerHTML = template
-  // document.getElementById('listings').innerHTML = '<h1>TODO build the houses template</h1>'
 }
 
 export class HousesController {
