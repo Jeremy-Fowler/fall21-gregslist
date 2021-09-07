@@ -15,8 +15,8 @@ export function getHouseFormTemplate() {
         <input type="number" class="form-control" name="levels" id="levels" required>
     </div>
     <div class="form-group">
-        <label for="imgURL" class="">img:</label>
-        <input type="url" class="form-control" name="imgURL" id="imgURL" required>
+        <label for="imgUrl" class="">img:</label>
+        <input type="url" class="form-control" name="imgUrl" id="imgUrl" required>
     </div>
     <div class="form-group">
         <label for="year" class="">Year:</label>

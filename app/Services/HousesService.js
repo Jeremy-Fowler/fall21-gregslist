@@ -12,10 +12,10 @@ class HousesService {
         ProxyState.houses = res.data.map(h => new House(h))
         console.log('we habe houses?', ProxyState.houses)
     }
-    addHouse (houseData){
-        console.log('add house function')
-        var testHouse = new House(houseData)
-        ProxyState.houses = [...ProxyState.houses, testHouse]
+    async addHouse (houseData){
+        let res = await api.post('', houseData)
+        console.log('addHouse?', res)
+        ProxyState.houses = [...ProxyState.houses, new House(res.data)]
     }
 }
 
