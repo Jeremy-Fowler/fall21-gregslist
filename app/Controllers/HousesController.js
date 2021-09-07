@@ -13,8 +13,9 @@ export class HousesController {
   constructor() {
     // TODO register the listener for houses
     ProxyState.on('houses', _drawHouses)
+    housesService.getHouses()
   }
-  addHouse(){
+  async addHouse(){
     event.preventDefault()
         /**
      * @type {HTMLFormElement}
@@ -23,15 +24,17 @@ export class HousesController {
     const form = event.target
 
     const houseData = {
-      state: form.state.value,
-      squareFoot: form.squareFoot.value,
-      description: form.description.value,
+      bedrooms: form.bedrooms.value,
+      bathrooms: form.bathrooms.value,
+      levels: form.levels.value,
+      imgUrl: form.imgUrl.value,
+      year: form.year.value,
       price: form.price.value,
-      img: form.img.value,
+      description: form.description.value
     }
 
     try{
-      housesService.addHouse(houseData)
+      await housesService.addHouse(houseData)
     }catch(e) {
       form.make.classList.add('border-danger')
       console.error('[TODO] you were supposed to do this', e)
