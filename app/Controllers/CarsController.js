@@ -10,7 +10,7 @@ function _drawCars() {
 
 export class CarsController {
   constructor() {
-    ProxyState.on('cars', _drawCars)
+    // ProxyState.on('cars', _drawCars)
     //             ^^^^ magic string must match a property on the appstate
     carsService.getCars()
   }

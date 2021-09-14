@@ -2,7 +2,7 @@ import { generateId } from "../Utils/generateId.js"
 
 export class Car {
   constructor(carData) {
-    this.id = carData.id || generateId()
+    this.id = carData.id
     this.make = carData.make
     this.model = carData.model
     this.imgUrl = carData.imgUrl

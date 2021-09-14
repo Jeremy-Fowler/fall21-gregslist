@@ -12,7 +12,7 @@ function _drawHouses() {
 export class HousesController {
   constructor() {
     // TODO register the listener for houses
-    ProxyState.on('houses', _drawHouses)
+    // ProxyState.on('houses', _drawHouses)
     housesService.getHouses()
   }
   async addHouse(){

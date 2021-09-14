@@ -3,14 +3,15 @@ import { getJobFormTemplate } from "../forms/jobform.js";
 import { jobsService } from "../Services/JobsService.js";
 
 function _drawJobs(){
-    let template =''
-    ProxyState.jobs.forEach(job => template += job.CardTemplate)
-    document.getElementById('listings').innerHTML = template
+  let template =''
+  ProxyState.jobs.forEach(job => template += job.CardTemplate)
+  document.getElementById('listings').innerHTML = template
 }
 
 export class JobsController{
   constructor(){
-    ProxyState.on("jobs", _drawJobs)
+    // ProxyState.on("jobs", _drawJobs)
+    jobsService.getJobs()
   }
   addJob(){
     event.preventDefault()
@@ -39,7 +40,8 @@ export class JobsController{
     form.reset()
   }
   showJobs(){
-    _drawJobs
+    console.log('is it working?')
+    _drawJobs()
     document.getElementById('controls').innerHTML = `
       <button class="btn text-white btn-primary" onclick="app.jobsController.toggleJobForm()">Add Job</button>
     `

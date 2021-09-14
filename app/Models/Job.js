@@ -2,23 +2,25 @@ import { generateId } from "../Utils/generateId.js"
 
 export class Job{
     constructor(jobData){
-        this.id = jobData.id || generateId()
+        this.id = jobData.id
+        this.company = jobData.company
         this.jobTitle = jobData.jobTitle
-        this.pay = jobData.pay
+        this.hours = jobData.hours
+        this.rate = jobData.rate
         this.description = jobData.description
-        this.img = jobData.img
     }
 
     get CardTemplate(){
         return /*html*/`
         <div class="col-lg-3 mb-4 listing">
           <div class="card">
-            <img src="${this.img}" alt="listing image" class="rounded">
+            <img src="https://www.chicagotribune.com/resizer/_71CczY9L-zD6iavqs3J5_nzEzU=/800x802/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/YHJ63MXXBZQI64WDTWBXKUFSAU.jpg" alt="listing image" class="rounded">
             <div class="card-body">
               <h5 class="d-flex justify-content-between">
                 <span>Hiring: ${this.jobTitle}</span>
-                <span>${this.pay} per hour</span>
+                
               </h5>
+              <p>Rate: $${this.rate} Hours: ${this.hours}</p>
               <p>${this.description}</p>
             </div>
           </div>
